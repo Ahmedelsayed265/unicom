@@ -74,4 +74,24 @@
   ::placeholder {
     font-size: 14px;
   }
+
+  .custom_round {
+    border-radius: 25px 25px 25px 90px;
+  }
+
+  .auth_page {
+    background-image: url("/images/auth.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 40% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
