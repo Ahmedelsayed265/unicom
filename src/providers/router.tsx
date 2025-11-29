@@ -25,24 +25,24 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "register-step2",
+        path: "choose-account",
+        element: <ChooseAccountType />,
+      },
+      {
+        path: "create-seller-1",
         element: <CreateAccount />,
       },
       {
-        path: "register-step3",
+        path: "create-seller-2",
         element: <Documents />,
       },
       {
-        path: "register-step4",
-        element: <Confirm />,
-      },
-      {
-        path: "register-step5",
+        path: "create-seller-success",
         element: <Success />,
       },
       {
-        path: "choose-account",
-        element: <ChooseAccountType />,
+        path: "register",
+        element: <Confirm />,
       },
       {
         path: "about",

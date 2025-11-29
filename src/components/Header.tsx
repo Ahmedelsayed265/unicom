@@ -6,7 +6,7 @@ export default function Header() {
   const { t } = useTranslation();
 
   return (
-    <header className="flex items-center justify-between bg-[#373C51] py-4 px-8 sticky top-0 shadow-md z-[99999999]">
+    <header className="flex items-center justify-between bg-[#373C51] py-4 px-8 sticky top-0 shadow-md z-[9]">
       <Link to="/" className="flex-1">
         <img src="/images/logo.png" alt="logo" className="h-[42px]" />
       </Link>
