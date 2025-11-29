@@ -1,7 +1,7 @@
 import axios, { type AxiosRequestConfig } from "axios";
 
 export const axiosApi = axios.create({
-  baseURL: "http://45.94.209.137:100/api",
+  baseURL: "https://unicom.devalm.com/api/",
   headers: {
     "Content-Type": "application/json",
   },

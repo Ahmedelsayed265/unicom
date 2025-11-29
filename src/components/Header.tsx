@@ -6,7 +6,7 @@ export default function Header() {
   const { t } = useTranslation();
 
   return (
-    <header className="flex items-center justify-between bg-[#373C51] py-4 px-8 sticky top-0 shadow-md">
+    <header className="flex items-center justify-between bg-[#373C51] py-4 px-8 sticky top-0 shadow-md z-[99999999]">
       <Link to="/" className="flex-1">
         <img src="/images/logo.png" alt="logo" className="h-[42px]" />
       </Link>
@@ -29,8 +29,11 @@ export default function Header() {
         </NavLink>
       </div>
 
-      <div className="flex-1 flex justify-end">
-        <LangMenu/>
+      <div className="flex-1 flex justify-end gap-4">
+        <Link to="login" className="rounded-md bg-white p-2 px-4">
+          {t("login")}
+        </Link>
+        <LangMenu />
       </div>
     </header>
   );

@@ -7,12 +7,16 @@
   "companyName": "Unicom",
   "loginTitle": "سجّل دخولك",
   "logindesc": "أسهل طريقة لإدارة حسابك وطلباتك",
-  "user_name": "اسم المستخدم",
   "password": "كلمة المرور",
   "forget": "هل نسيت كلمة المرور ؟",
   "login": "تسجيل الدخول",
   "register": "انشاء حساب",
-  "enter_user_name": "أدخل اسم المستخدم",
+  "phone_number": "رقم الهاتف",
+  "enter_phone_number": "أدخل رقم الهاتف",
   "enter_password": "أدخل كلمة المرور",
-  "create_account": "إنشاء حساب"
+  "create_account": "إنشاء حساب",
+  "errors": {
+    "mobileFormat": "يجب أن يتكون من 7 أرقام",
+    "passwordMinLogin": "يجب ألا تقل كلمة المرور عن 6 أحرف"
+  }
 }

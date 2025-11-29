@@ -1,4 +1,4 @@
-import MarketCard from "@/components/MarketCard";
+import MarketCard from "@/features/markets/MarketCard";
 
 export default function Home() {
   return (

@@ -1,12 +1,10 @@
-import bgImg from "../../public/images/auth.png";
-
 export default function About() {
   return (
     <div className="w-full">
       <section className="relative w-full h-[600px] bg-cover bg-center flex flex-col justify-center items-center text-center ">
         <div className="absolute inset-0">
           <img
-            src={bgImg}
+            src="/images/auth.png"
             alt="background"
             className=" object-cover  opacity-50"
           />

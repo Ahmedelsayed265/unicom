@@ -6,7 +6,7 @@ interface SettingsState {
 }
 
 export const useSettingsStore = create<SettingsState>()((set) => ({
-  lang: localStorage.getItem("i18nextLng") || "en",
+  lang: localStorage.getItem("i18nextLng") || "ar",
 
   setLanguage: (lang: string) => {
     localStorage.setItem("i18nextLng", lang);

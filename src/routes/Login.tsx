@@ -1,17 +1,34 @@
+import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loginSchema, type LoginData } from "@/features/auth/schema";
+import { useForm } from "react-hook-form";
 import InputField from "@/components/InputField";
 import PasswordField from "@/components/PasswordField";
 import SubmitBtn from "@/components/SubmitBtn";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import useLogin from "@/features/auth/useLogin";
 
 export default function Login() {
   const { t } = useTranslation();
+  const { loginAction, isPending } = useLogin();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginData>({
+    resolver: zodResolver(loginSchema),
+    mode: "onChange",
+  });
 
   return (
     <div className="flex items-center justify-center py-20 auth_page">
       <title>{t("login")}</title>
 
-      <form className="bg-white w-[min(600px,100%-16px)] py-8 px-14 custom_round">
+      <form
+        className="bg-white w-[min(600px,100%-16px)] py-8 px-14 custom_round"
+        onSubmit={handleSubmit((data) => loginAction(data))}
+      >
         <h4 className="text-center text-[20px] text-[#126C9E] font-bold mb-4">
           {t("loginTitle")}
         </h4>
@@ -20,19 +37,24 @@ export default function Login() {
 
         <div className="flex flex-col justify-center gap-4">
           <InputField
-            label={t("user_name")}
-            placeholder={t("enter_user_name")}
+            label={t("phone_number")}
+            placeholder={t("enter_phone_number")}
+            error={t(errors.phone?.message as string)}
+            {...register("phone")}
           />
+
           <PasswordField
             label={t("password")}
             placeholder={t("enter_password")}
+            error={t(errors.password?.message as string)}
+            {...register("password")}
           />
 
-          <Link to="/forget-password" className="text-end">
+          {/* <Link to="/forget-password" className="text-end">
             {t("forget")}
-          </Link>
+          </Link> */}
 
-          <SubmitBtn text={t("login")} />
+          <SubmitBtn text={t("login")} loading={isPending} />
 
           <Link
             to="/choose-account"
