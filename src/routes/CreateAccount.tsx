@@ -59,7 +59,10 @@ export default function CreateAccount() {
           </div>
         </div>
 
-        <button className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white  text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition">
+        <button
+          className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white  text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition"
+          onClick={() => navigate("/register-step3")}
+        >
           التالي
         </button>
       </div>
