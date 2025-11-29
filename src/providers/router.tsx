@@ -6,6 +6,7 @@ import Login from "@/routes/Login";
 import About from "@/routes/About";
 import Terms from "@/routes/Terms";
 import Privacy from "@/routes/Privacy";
+import CreateAccount from "@/routes/CreateAccount";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "register-step2",
+        element: <CreateAccount />,
       },
       {
         path: "choose-account",
