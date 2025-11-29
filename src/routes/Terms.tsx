@@ -1,4 +1,4 @@
-import useGetSettings from "@/features/useGetSettings";
+import useGetSettings from "@/hooks/useGetSettings";
 
 export default function Terms() {
   const { data } = useGetSettings();

@@ -1,4 +1,4 @@
-import useGetSettings from "@/features/useGetSettings";
+import useGetSettings from "@/hooks/useGetSettings";
 
 export default function Privacy() {
   const { data } = useGetSettings();
