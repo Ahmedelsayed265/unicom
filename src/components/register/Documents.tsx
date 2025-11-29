@@ -10,7 +10,7 @@ export default function Documents() {
   const [record, setRecord] = useState<"yes" | "no">("yes");
   const [license, setLicense] = useState<"yes" | "no">("no");
   const [recordFile, setRecordFile] = useState<File | null>(null);
-  const [licenseFile, setLicenseFile] = useState<File | null>(null);
+  const [, setLicenseFile] = useState<File | null>(null);
 
   const handleFileChange = (
     e: ChangeEvent<HTMLInputElement>,

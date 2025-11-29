@@ -8,6 +8,7 @@ import {
 import useGetCities from "@/hooks/useGetCities";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import useGetMarkets from "@/hooks/useGetMarkets";
 
 export default function CreateAccount() {
@@ -15,6 +16,7 @@ export default function CreateAccount() {
   const { data: cities } = useGetCities();
   const [selectedCity, setSelectedCity] = useState<string>("");
   const { data: markets } = useGetMarkets(selectedCity);
+  const navigate = useNavigate();
 
   return (
     <div className="auth_page min-h-[665px] flex items-center justify-center py-20 px-4">

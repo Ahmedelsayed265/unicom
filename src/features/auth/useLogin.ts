@@ -12,10 +12,10 @@ export default function useLogin() {
 
 
   const { mutate: loginAction, isPending } = useMutation({
-    mutationFn: (formData: LoginData): Promise<""> =>
-      postRequest<"">("user/login", {...formData, token: "123"}),
+    mutationFn: (formData: LoginData) =>
+      postRequest("user/login", { ...formData, token: "123" }),
 
-    onSuccess: (res: "") => {
+    onSuccess: () => {
       navigate("/");
     },
 

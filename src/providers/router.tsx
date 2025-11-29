@@ -7,9 +7,9 @@ import About from "@/routes/About";
 import Terms from "@/routes/Terms";
 import Privacy from "@/routes/Privacy";
 import CreateAccount from "@/routes/CreateAccount";
-import Success from "@/components/register/success";
+import Success from "@/components/register/Success";
 import Confirm from "@/components/register/Confirm";
-import Documents from "@/components/register/documents";
+import Documents from "@/components/register/Documents";
 
 export const router = createBrowserRouter([
   {
