@@ -127,7 +127,7 @@ export default function Documents() {
                 />
                 {errors.commercial_record && (
                   <p className="text-red-500 text-sm">
-                   {t(errors.commercial_record.message as string)}
+                    {t(errors.commercial_record.message as string)}
                   </p>
                 )}
               </div>
@@ -141,7 +141,16 @@ export default function Documents() {
                       name="freelance_id"
                       control={control}
                       render={({ field }) => (
-                        <InputField {...field} label={t("freelance_id")} />
+                        <div>
+                          <InputField {...field} label={t("freelance_id")} />
+                          {errors.freelance_id && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {t(
+                                errors.freelance_id.message as string
+                              )}
+                            </p>
+                          )}
+                        </div>
                       )}
                     />
 
@@ -149,10 +158,19 @@ export default function Documents() {
                       name="freelance_national_id"
                       control={control}
                       render={({ field }) => (
-                        <InputField
-                          {...field}
-                          label={t("freelance_national_id")}
-                        />
+                        <div>
+                          <InputField
+                            {...field}
+                            label={t("freelance_national_id")}
+                          />
+                          {errors.freelance_national_id && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {t(
+                                errors.freelance_national_id.message as string
+                              )}
+                            </p>
+                          )}
+                        </div>
                       )}
                     />
                   </div>
@@ -174,7 +192,9 @@ export default function Documents() {
                               ?.click()
                           }
                         >
-                          {freelanceImage ? freelanceImage.name : t("upload_images")}
+                          {freelanceImage
+                            ? freelanceImage.name
+                            : t("upload_images")}
                         </button>
 
                         <input

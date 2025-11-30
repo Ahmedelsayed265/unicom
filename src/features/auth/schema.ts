@@ -14,24 +14,22 @@ export const step1Schema = z.object({
 });
 
 // Step 2: Documents Schema
-export const step2Schema = z.object({
+export const step2Schema = z
+  .object({
     has_commercial_record: z.enum(["yes", "no"]),
     commercial_record: z
       .instanceof(File)
       .optional()
-      .refine(
-        (file) => !file || file.size <= 5000000,
-         "errors.fileSize"
-        ),
-    freelance_id: z.string().optional(),
-    freelance_national_id: z.string().optional(),
+      .refine((file) => !file || file.size <= 5000000, "errors.fileSize"),
+    freelance_id: z.string().min(1, "errors.freelanceIdRequired"),
+    freelance_national_id: z
+      .string()
+      .min(1, "errors.freelanceNationalIdRequired"),
+
     freelance_image: z
       .instanceof(File)
       .optional()
-      .refine(
-        (file) => !file || file.size <= 5000000,
-         "errors.fileSize"
-        ),
+      .refine((file) => !file || file.size <= 5000000, "errors.fileSize"),
   })
   .refine(
     (data) => data.has_commercial_record === "no" || !!data.commercial_record,
