@@ -43,7 +43,18 @@ export default function CreateAccount() {
   return (
     <div className="auth_page min-h-[665px] flex items-center justify-center py-20 px-4">
       <title>{t("create_account")}</title>
+      <div className="absolute top-[15%] right-10 flex items-start gap-3">
+        <div className="w-[8px] h-[55px] bg-white rounded-sm"></div>
 
+        <div>
+          <h1 className="text-[#126C9E] font-bold text-[20px] leading-tight">
+            انشاء حسابك
+          </h1>
+          <p className="text-[#666874] text-[15px] mt-1">
+            تتبع بيانات الأسواق واضف أسواق جديدة بسهولة
+          </p>
+        </div>
+      </div>
       <div className="bg-white w-[min(700px,100%-16px)] py-10 px-12 custom_round shadow-md ">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-6">
@@ -96,7 +107,10 @@ export default function CreateAccount() {
                     </SelectTrigger>
                     <SelectContent>
                       {markets?.data?.map((market) => (
-                        <SelectItem key={market.id} value={market.id.toString()}>
+                        <SelectItem
+                          key={market.id}
+                          value={market.id.toString()}
+                        >
                           {market.name}
                         </SelectItem>
                       ))}
