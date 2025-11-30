@@ -1,14 +1,17 @@
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router";
 import { useState } from "react";
+import { LoaderCircle, Menu, X } from "lucide-react";
 import LangMenu from "./LangMenu";
 import useAuth from "@/lib/useAuth";
-import { Menu, X } from "lucide-react";
+import useLogout from "@/features/auth/register/useLogout";
 
 export default function Header() {
   const { isAuthed } = useAuth();
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+
+  const { mutate: logout, isPending } = useLogout();
 
   return (
     <header className="bg-[#373C51] py-4 px-6 sticky top-0 shadow-md z-[50]">
@@ -47,6 +50,17 @@ export default function Header() {
             >
               {t("login")}
             </Link>
+          )}
+
+          {isAuthed && (
+            <button
+              onClick={() => logout()}
+              disabled={isPending}
+              className="md:flex rounded-md bg-white p-2 px-4 hidden items-center gap-2"
+            >
+              {t("logout")}
+              {isPending && <LoaderCircle className="animate-spin w-5 h-5" />}
+            </button>
           )}
 
           <LangMenu />
@@ -113,6 +127,20 @@ export default function Header() {
             >
               {t("login")}
             </Link>
+          )}
+
+          {isAuthed && (
+            <button
+              onClick={() => {
+                logout();
+                setOpen(false);
+              }}
+              disabled={isPending}
+              className="rounded-md bg-white w-fit py-2 px-4 flex items-center gap-2"
+            >
+              {t("logout")}
+              {isPending && <LoaderCircle className="animate-spin w-5 h-5" />}
+            </button>
           )}
         </div>
       )}

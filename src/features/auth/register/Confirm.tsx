@@ -17,13 +17,14 @@ import {
 import InputField from "@/components/InputField";
 import useGetMarketTypes from "@/hooks/useGetMarketTypes";
 import useGetProductsTypes from "@/hooks/useGetProductsTypes";
+import useGetSellers from "@/features/markets/useGetSellers";
 
 export default function Confirm() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { refetch } = useGetSellers(true);
   const { formData, resetFormData } = useSellerRegistration();
   const { data: marketTypes } = useGetMarketTypes();
-  const queryClient = useQueryClient();
   const { data: productsTypes } = useGetProductsTypes();
 
   const {
@@ -46,7 +47,7 @@ export default function Confirm() {
     onSuccess: (data) => {
       toast.success(t("account_created_successfully"));
       resetFormData();
-      queryClient.invalidateQueries({ queryKey: ["sellers"] });
+      refetch();
       navigate("/create-seller-success", {
         state: { idName: data.data?.id_name || "STU0000" },
       });
