@@ -104,6 +104,12 @@
       "rejected": "مرفوض"
     }
   },
+  "deleteConfirmation": {
+    "title": "تأكيد الحذف",
+    "description": "هل أنت متأكد من حذف هذا السوق؟"
+  },
+  "delete": "حذف",
+  "cancel": "إلغاء",
   "errors": {
     "nameRequired": "الاسم مطلوب",
     "invalidEmail": "البريد الإلكتروني غير صالح",
