@@ -113,7 +113,9 @@
     "selectProductType": "Please select the product type",
     "storeAreaRequired": "Please enter the approximate store area",
     "commercialRecordRequired": "Commercial record is required",
-    "freelanceImageRequired": "Freelance image is required"
+    "freelanceImageRequired": "Freelance image is required",
+    "freelanceIdRequired": "Freelance ID is required",
+    "freelanceNationalIdRequired": "National ID is required"
   },
   "from": "From",
   "us": "Us",
