@@ -24,5 +24,35 @@
     "passwordMinLogin": "Password must be at least 6 characters",
     "nameRequired": "Name is required",
     "invalidEmail": "Invalid email address"
-  }
+  },
+  "from": "About",
+  "us": "Us",
+
+  "title1": "We Raise the Bar of Success",
+  "title2": "Using Technology...",
+
+  "desc1": "We provide the best solutions in IT and digital economy fields",
+  "desc2": "including cloud computational engineering to meet customers’ needs.",
+
+  "whyUs": "Why Us?",
+
+  "experience": {
+    "title": "Experience",
+    "text": "Our team consists of highly skilled professionals with deep understanding of the latest IT technologies."
+  },
+  "quality": {
+    "title": "Quality",
+    "text": "We are committed to providing high-quality services and solutions."
+  },
+  "trust": {
+    "title": "Reliability",
+    "text": "Our clients can depend on us to meet deadlines and deliver projects on time."
+  },
+  "innovation": {
+    "title": "Innovation",
+    "text": "We follow the latest developments in IT and constantly explore new ways to improve our services."
+  },
+
+  "team": "Our Team",
+  "teamDesc": "We believe in our teams as they represent our core strength, working with passion to achieve excellent results in a healthy work environment."
 }
