@@ -110,14 +110,14 @@ export default function MarketCard({ market }: { market: Seller }) {
       </div>
 
       <div className="flex justify-center items-center gap-4 mt-4">
-        <button className="py-2 px-5 bg-[#40465C] rounded-[8px] flex items-center gap-2 text-white">
+        {/* <button className="py-2 px-5 bg-[#40465C] rounded-[8px] flex items-center gap-2 text-white">
           <img
             src="/images/icon-park-outline_more-app.svg"
             className="w-[20px]"
             alt=""
           />
           {t("marketCard.details")}
-        </button>
+        </button> */}
 
         <button className="py-2 px-5 bg-[#000000] rounded-[8px] flex items-center gap-2 text-white">
           <img src="/images/tabler_edit.svg" className="w-[20px]" alt="" />
