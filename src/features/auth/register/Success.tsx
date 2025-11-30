@@ -23,7 +23,7 @@ export default function Success() {
             </p>
           </div>
         </div>
-        <div className="bg-white w-[min(600px,100%-16px)] py-8 px-14 custom_round">
+        <div className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-8 md:custom_round rounded-lg">
           <div className="flex items-center justify-center gap-6 flex-col">
             <h1 className="text-[#126C9E] text-2xl font-bold ">
               {t("account_created")}

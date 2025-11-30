@@ -29,8 +29,6 @@ export default function Documents() {
   const freelanceImage = watch("freelance_image");
 
   const onSubmit = (data: Step2FormData) => {
-    console.log(errors);
-
     updateFormData(data);
     navigate("/create-seller-3");
   };
@@ -50,7 +48,7 @@ export default function Documents() {
           </p>
         </div>
       </div>
-      <div className="bg-white w-[min(600px,100%-16px)] py-8 px-14 custom_round">
+      <div className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-8 md:custom_round rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex gap-2 flex-col">

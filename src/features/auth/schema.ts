@@ -21,10 +21,8 @@ export const step2Schema = z
       .instanceof(File)
       .optional()
       .refine((file) => !file || file.size <= 5000000, "errors.fileSize"),
-    freelance_id: z.string().min(1, "errors.freelanceIdRequired"),
-    freelance_national_id: z
-      .string()
-      .min(1, "errors.freelanceNationalIdRequired"),
+    freelance_id: z.string().optional(),
+    freelance_national_id: z.string().optional(),
 
     freelance_image: z
       .instanceof(File)

@@ -85,7 +85,7 @@ export default function Confirm() {
           <p className="text-[#666874] text-[15px] mt-1">{t("subtitle")}</p>
         </div>
       </div>
-      <div className="bg-white w-[min(600px,100%-16px)] py-8 px-14 custom_round">
+      <div className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-8 md:custom_round rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-4">
             <Controller

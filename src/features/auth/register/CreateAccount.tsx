@@ -45,7 +45,7 @@ export default function CreateAccount() {
       <title>{t("create_account")}</title>
 
       {/* Title + Description */}
-      <div className="absolute top-[18%] start-20 flex items-start gap-4">
+      <div className="absolute top-[18%] md:start-20 flex items-start gap-4 start-4">
         <div className="w-[8px] h-[65px] bg-white rounded-sm"></div>
 
         <div>
@@ -60,7 +60,7 @@ export default function CreateAccount() {
       </div>
 
       {/* Form Box */}
-      <div className="bg-white w-[min(700px,100%-16px)] py-10 px-12 custom_round shadow-md">
+      <div className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-8 md:custom_round rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-6">
             {/* AREA */}
