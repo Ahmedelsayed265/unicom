@@ -5,15 +5,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import useGetCities from "@/hooks/useGetCities";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import useGetMarkets from "@/hooks/useGetMarkets";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSellerRegistration } from "@/features/auth/SellerRegistrationContextType";
 import { step1Schema, type Step1FormData } from "@/features/auth/schema";
+import useGetCities from "@/hooks/useGetCities";
+import useGetMarkets from "@/hooks/useGetMarkets";
 
 export default function CreateAccount() {
   const { t } = useTranslation();

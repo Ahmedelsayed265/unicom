@@ -6,7 +6,7 @@ import PasswordField from "@/components/PasswordField";
 import useRegester from "./auth/useRegester";
 import { registerSchema, type RegisterData } from "./auth/schema";
 
-export default function Login() {
+export default function EmployRegister() {
   const { t } = useTranslation();
   const { registerAction } = useRegester();
 
