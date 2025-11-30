@@ -1,9 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 
 export default function Success() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+  const storeNumber = location.state?.storeNumber || "STU0000";
 
   return (
     <div className="flex items-center justify-center py-20 auth_page min-h-[665px]">
@@ -18,13 +20,13 @@ export default function Success() {
         </div>
 
         <div className="m-10 text-center">
-          <p className="text-[#444]  mb-4 font-bold">
+          <p className="text-[#444] mb-4 font-bold">
             هذا هو رقم المتجر الخاص بك
           </p>
 
           <div className="relative max-w-xs mx-auto">
             <input
-              value="STU0000"
+              value={storeNumber}
               readOnly
               className="h-14 text-2xl font-bold text-center tracking-widest text-[#232633]
                            bg-[#126C9E33] border-[#d6d6d6] rounded-xl focus:ring-4 focus:ring-[#232633]/20
@@ -33,8 +35,8 @@ export default function Success() {
           </div>
         </div>
         <button
-          className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white  text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition"
-          onClick={() => navigate("/login")}
+          className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition"
+          onClick={() => navigate("/")}
         >
           ابدا الان
         </button>

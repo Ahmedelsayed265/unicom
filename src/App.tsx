@@ -1,8 +1,10 @@
 import { RouterProvider } from "react-router";
 import { router } from "./providers/router";
 import { useEffect } from "react";
+import { Toaster } from "sonner";
 import { useSettingsStore } from "./utils/settingsStore";
 import { DirectionProvider } from "@radix-ui/react-direction";
+import { SellerRegistrationProvider } from "@/features/auth/SellerRegistrationContextType";
 import i18n from "./utils/i18n";
 
 function App() {
@@ -20,7 +22,10 @@ function App() {
 
   return (
     <DirectionProvider dir={lang === "ar" ? "rtl" : "ltr"}>
-      <RouterProvider router={router} />
+      <SellerRegistrationProvider>
+        <RouterProvider router={router} />
+      </SellerRegistrationProvider>
+      <Toaster position="top-center" richColors />
     </DirectionProvider>
   );
 }
