@@ -127,7 +127,7 @@ export default function Documents() {
                 />
                 {errors.commercial_record && (
                   <p className="text-red-500 text-sm">
-                    {errors.commercial_record.message}
+                   {t(errors.commercial_record.message as string)}
                   </p>
                 )}
               </div>
@@ -195,7 +195,7 @@ export default function Documents() {
                   />
                   {errors.freelance_image && (
                     <p className="text-red-500 text-sm">
-                      {errors.freelance_image.message}
+                      {t(errors.freelance_image.message as string)}
                     </p>
                   )}
                 </div>

@@ -104,7 +104,9 @@
     "nameMin": "الاسم يجب أن يكون حرفين على الأقل",
     "selectMarketType": "يرجى اختيار نوع المحل",
     "selectProductType": "يرجى اختيار نوع المنتج",
-    "storeAreaRequired": "يرجى إدخال المساحة التقريبية"
+    "storeAreaRequired": "يرجى إدخال المساحة التقريبية",
+    "commercialRecordRequired": "يجب رفع السجل التجاري",
+    "freelanceImageRequired": "يجب رفع صورة العمل الحر"
   },
   "from": "من",
   "us": "نحن",

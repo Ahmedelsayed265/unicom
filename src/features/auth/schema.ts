@@ -15,24 +15,39 @@ export const step1Schema = z.object({
 
 // Step 2: Documents Schema
 export const step2Schema = z.object({
-  has_commercial_record: z.enum(["yes", "no"]),
-  commercial_record: z
-    .instanceof(File)
-    .optional()
-    .refine(
-      (file) => !file || file.size <= 5000000,
-      "errors.fileSize"
-    ),
-  freelance_id: z.string().optional(),
-  freelance_national_id: z.string().optional(),
-  freelance_image: z
-    .instanceof(File)
-    .optional()
-    .refine(
-      (file) => !file || file.size <= 5000000,
-      "errors.fileSize"
-    ),
-});
+    has_commercial_record: z.enum(["yes", "no"]),
+    commercial_record: z
+      .instanceof(File)
+      .optional()
+      .refine(
+        (file) => !file || file.size <= 5000000,
+         "errors.fileSize"
+        ),
+    freelance_id: z.string().optional(),
+    freelance_national_id: z.string().optional(),
+    freelance_image: z
+      .instanceof(File)
+      .optional()
+      .refine(
+        (file) => !file || file.size <= 5000000,
+         "errors.fileSize"
+        ),
+  })
+  .refine(
+    (data) => data.has_commercial_record === "no" || !!data.commercial_record,
+    {
+      message: "errors.commercialRecordRequired",
+      path: ["commercial_record"],
+    }
+  )
+
+  .refine(
+    (data) => data.has_commercial_record === "yes" || !!data.freelance_image,
+    {
+      message: "errors.freelanceImageRequired",
+      path: ["freelance_image"],
+    }
+  );
 
 // Step 3: Confirmation Schema
 export const step3Schema = z.object({
