@@ -6,5 +6,23 @@
   "rights": "All rights reserved",
   "companyName": "Unicom",
   "loginTitle": "Login",
-  "logindesc": "The easiest way to manage your account and orders"
+  "logindesc": "The easiest way to manage your account and orders",
+  "register": "Register",
+  "name": "Name",
+  "email": "Email",
+  "phone_number": "Phone Number",
+  "password": "Password",
+  "enter_your_name": "Enter your name",
+  "enter_your_email": "Enter your email",
+  "enter_phone_number": "Enter your phone number",
+  "enter_password": "Enter your password",
+  "toast": {
+    "login_failed": "Login failed"
+  },
+  "errors": {
+    "mobileFormat": "Invalid phone number",
+    "passwordMinLogin": "Password must be at least 6 characters",
+    "nameRequired": "Name is required",
+    "invalidEmail": "Invalid email address"
+  }
 }
