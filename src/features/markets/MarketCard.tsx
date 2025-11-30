@@ -1,4 +1,6 @@
-export default function MarketCard() {
+import type { Seller } from "./useGetSellers";
+
+export default function MarketCard({ market }: { market: Seller }) {
   return (
     <div className="bg-white p-6 rounded-[16px] flex flex-col">
       <div className="flex items-center justify-between border-b border-[#f4f4f4] py-3">
@@ -8,22 +10,22 @@ export default function MarketCard() {
             className="w-6"
             alt=""
           />
-          <h6>اسم السوق : الرياض العالي</h6>
+          <h6>اسم السوق : {market.market.name}</h6>
         </div>
         <div className="flex items-center gap-2">
           <img src="/images/mdi_store-cog.svg" className="w-6" alt="" />
-          <h6> اسم المخزن : الرياض العالي</h6>
+          <h6> اسم المخزن : {market.name}</h6>
         </div>
       </div>
 
       <div className="flex items-center justify-between border-b border-[#f4f4f4] py-3">
         <div className="flex items-center gap-2">
           <img src="/images/solar_box-broken.svg" className="w-6" alt="" />
-          <h6> اسم المنتج : الرياض العالي</h6>
+          <h6> اسم المنتج : {market.product_type.name}</h6>
         </div>
         <div className="flex items-center gap-2">
           <img src="/images/duo-icons_id-card.svg" className="w-6" alt="" />
-          <h6> رقم الهوية : 53647384364</h6>
+          <h6> رقم الهوية : {market.freelance_national_id || "غير متاح"}</h6>
         </div>
       </div>
 
@@ -34,7 +36,7 @@ export default function MarketCard() {
             className="w-6"
             alt=""
           />
-          <h6> نوع السوق : تجاري</h6>
+          <h6> نوع السوق : {market.market_type.name}</h6>
         </div>
         <div className="flex items-center gap-2">
           <img
@@ -42,14 +44,14 @@ export default function MarketCard() {
             className="w-6"
             alt=""
           />
-          <h6> عدد المنتجات : 200</h6>
+          <h6> عدد المنتجات : {market.area}</h6>
         </div>
       </div>
 
       <div className="flex items-center justify-between border-b border-[#f4f4f4] py-3">
         <div className="flex items-center gap-2">
           <img src="/images/hugeicons_date-time.svg" className="w-6" alt="" />
-          <h6> تاريخ الإنشاء : 24 Nov 2025</h6>
+          <h6> تاريخ الإنشاء : {new Date(market.created_at).toLocaleDateString("ar-EG")}</h6>
         </div>
         <div className="flex items-center gap-2">
           <img
@@ -57,15 +59,19 @@ export default function MarketCard() {
             className="w-6"
             alt=""
           />
-          <h6> الموقع : الرياض،السعودية</h6>
+          <h6> الموقع : {market.market.city.name}،السعودية</h6>
         </div>
       </div>
 
       <div className="py-3 flex flex-col gap-2">
         <h6>الحالة</h6>
         <div className="h-[32px] rounded-full bg-gray-100">
-          <span className="w-full h-full bg-[#0C6900] rounded-full flex items-center justify-center text-white">
-            نشط
+          <span
+            className={`w-full h-full rounded-full flex items-center justify-center text-white ${
+              market.status === "active" ? "bg-[#0C6900]" : "bg-[#9E3012]"
+            }`}
+          >
+            {market.status_name}
           </span>
         </div>
       </div>
