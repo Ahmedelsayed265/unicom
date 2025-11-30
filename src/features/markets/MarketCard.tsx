@@ -6,7 +6,7 @@ export default function MarketCard({ market }: { market: Seller }) {
 
   return (
     <div className="bg-white p-6 rounded-[16px] flex flex-col">
-      <div className="flex items-center justify-between border-b border-[#f4f4f4] py-3">
+      <div className="flex items-center flex-wrap justify-between border-b border-[#f4f4f4] py-3 gap-2">
         <div className="flex items-center gap-2">
           <img
             src="/images/material-symbols_store.svg"
@@ -26,7 +26,7 @@ export default function MarketCard({ market }: { market: Seller }) {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-b border-[#f4f4f4] py-3">
+      <div className="flex items-center flex-wrap justify-between border-b border-[#f4f4f4] py-3 gap-2">
         <div className="flex items-center gap-2">
           <img src="/images/solar_box-broken.svg" className="w-6" alt="" />
           <h6>
@@ -43,7 +43,7 @@ export default function MarketCard({ market }: { market: Seller }) {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-b border-[#f4f4f4] py-3">
+      <div className="flex items-center flex-wrap justify-between border-b border-[#f4f4f4] py-3 gap-2">
         <div className="flex items-center gap-2">
           <img
             src="/images/fluent_rename-16-filled.svg"
@@ -67,7 +67,7 @@ export default function MarketCard({ market }: { market: Seller }) {
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-b border-[#f4f4f4] py-3">
+      <div className="flex items-center flex-wrap justify-between border-b border-[#f4f4f4] py-3 gap-2">
         <div className="flex items-center gap-2">
           <img src="/images/hugeicons_date-time.svg" className="w-6" alt="" />
           <h6>

@@ -11,7 +11,7 @@ export default function Home() {
   const { data, isLoading } = useGetSellers(isAuthed);
 
   return (
-    <div className="py-6 px-20 flex flex-col gap-6">
+    <div className="py-6 md:px-20 px-3 flex flex-col gap-6">
       <div className="flex items-center justify-between px-4">
         <div>
           <h4 className="text-[#126C9E] font-bold text-[24px] mb-3">
