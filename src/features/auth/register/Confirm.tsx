@@ -4,10 +4,9 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { useSellerRegistration } from "../SellerRegistrationContextType";
 import { step3Schema, type Step3FormData } from "../schema";
 import { createSeller } from "../sellerApi";
-import InputField from "@/components/InputField";
+import { useSellerRegistration } from "./SellerRegistrationContextType";
 import {
   Select,
   SelectContent,
@@ -15,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import InputField from "@/components/InputField";
 import useGetMarketTypes from "@/hooks/useGetMarketTypes";
 import useGetProductsTypes from "@/hooks/useGetProductsTypes";
 

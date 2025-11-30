@@ -10,8 +10,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useSellerRegistration } from "@/features/auth/SellerRegistrationContextType";
 import { step1Schema, type Step1FormData } from "@/features/auth/schema";
+import { useSellerRegistration } from "./SellerRegistrationContextType";
 import useGetCities from "@/hooks/useGetCities";
 import useGetMarkets from "@/hooks/useGetMarkets";
 

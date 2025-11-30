@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
-import type { SellerRegistrationData } from "./schema";
+import type { SellerRegistrationData } from "../schema";
 
 interface SellerRegistrationContextType {
   formData: Partial<SellerRegistrationData>;

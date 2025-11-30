@@ -6,7 +6,7 @@ import Login from "@/routes/Login";
 import About from "@/routes/About";
 import Terms from "@/routes/Terms";
 import Privacy from "@/routes/Privacy";
-import CreateAccount from "@/routes/CreateAccount";
+import CreateAccount from "@/features/auth/register/CreateAccount";
 import Success from "@/features/auth/register/Success";
 import Confirm from "@/features/auth/register/Confirm";
 import Documents from "@/features/auth/register/Documents";

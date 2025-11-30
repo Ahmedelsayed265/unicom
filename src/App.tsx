@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { Toaster } from "sonner";
 import { useSettingsStore } from "./utils/settingsStore";
 import { DirectionProvider } from "@radix-ui/react-direction";
-import { SellerRegistrationProvider } from "@/features/auth/SellerRegistrationContextType";
 import i18n from "./utils/i18n";
+import { SellerRegistrationProvider } from "./features/auth/register/SellerRegistrationContextType";
 
 function App() {
   const { lang } = useSettingsStore();

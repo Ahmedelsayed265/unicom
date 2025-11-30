@@ -5,18 +5,26 @@ import { toast } from "sonner";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import type { LoginData } from "./schema";
+import { useCookies } from "react-cookie";
 
 export default function useLogin() {
   const navigate = useNavigate();
+  const [, setCookie] = useCookies(["token"]);
   const { t } = useTranslation();
-
 
   const { mutate: loginAction, isPending } = useMutation({
     mutationFn: (formData: LoginData) =>
       postRequest("user/login", { ...formData, token: "123" }),
 
-    onSuccess: () => {
-      navigate("/");
+    onSuccess: (res) => {
+      if (res.data.code === 200) {
+        setCookie("token", res.data.token, {
+          path: "/",
+          secure: true,
+          sameSite: "strict",
+        });
+        navigate("/");
+      }
     },
 
     onError: (err: AxiosError<{ message?: string }>) => {
