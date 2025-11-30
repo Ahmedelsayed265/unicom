@@ -33,6 +33,14 @@
     "selectMarket": "Select Market",
     "next": "Next"
   },
+  "chooseAccount": {
+    "title": "Create Your Account",
+    "subtitle": "Track market data and easily add new markets",
+    "employee": "Employee",
+    "employeeRegister": "Register as Employee",
+    "seller": "Market Owner",
+    "sellerRegister": "Register as Market Owner"
+  },
   "marketCard": {
     "marketName": "Market Name",
     "storeName": "Store Name",
