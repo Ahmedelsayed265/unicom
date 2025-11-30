@@ -35,13 +35,13 @@ export default function EmployRegister() {
           <InputField
             label={t("name")}
             placeholder={t("enter_your_name")}
-            error={t(errors.phone?.message as string)}
+            error={t(errors.name?.message as string)}
             {...register("name")}
           />
           <InputField
             label={t("email")}
             placeholder={t("enter_your_email")}
-            error={t(errors.phone?.message as string)}
+            error={t(errors.email?.message as string)}
             {...register("email")}
           />
           <InputField
