@@ -26,7 +26,7 @@ export default function Login() {
       <title>{t("login")}</title>
 
       <form
-        className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-8 md:custom_round rounded-lg"
+        className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-6 md:custom_round rounded-lg"
         onSubmit={handleSubmit((data) => loginAction(data))}
       >
         <h4 className="text-center text-[20px] text-[#126C9E] font-bold mb-4">

@@ -6,12 +6,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useSettingsStore } from "@/utils/settingsStore";
 import { ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useQueryClient } from "@tanstack/react-query";
 import i18next from "i18next";
 
 export default function LangMenu() {
   const { setLanguage } = useSettingsStore();
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
 
   const handleLanguageChange = (selectedLanguage: string) => {
     setLanguage(selectedLanguage);
@@ -28,7 +30,7 @@ export default function LangMenu() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="rounded-md bg-white flex items-center justify-center gap-3 p-2">
-          <img src="/images/lang.svg" alt="lang" /> اللغة <ChevronDown width={16} />
+          <img src="/images/lang.svg" alt="lang" /> {t("language")} <ChevronDown width={16} />
         </button>
       </DropdownMenuTrigger>
 

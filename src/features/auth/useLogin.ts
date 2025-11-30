@@ -38,7 +38,7 @@ export default function useLogin() {
 
     onSuccess: (res) => {
       if (res.code === 200) {
-      toast.success("تم تسجيل الدخول بنجاح")
+        toast.success(t("toast.login_success"))
         setCookie("token", res.data.token, {
           path: "/",
           secure: true,

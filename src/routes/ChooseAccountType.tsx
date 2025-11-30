@@ -21,7 +21,7 @@ export default function ChooseAccountType() {
       <div className="flex items-center justify-center py-20 auth_page min-h-[665px]">
         <title>{t("chooseAccount.title")}</title>
 
-        <div className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-8 md:custom_round rounded-lg">
+        <div className="bg-white w-[min(600px,100%-16px)] py-8 md:px-14 px-6 md:custom_round rounded-lg">
           <div className="flex items-center gap-6">
             {/* Employee */}
             <Link

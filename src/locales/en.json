@@ -65,6 +65,7 @@
     "registerMarketOwner": "Register as Market Owner"
   },
   "toast": {
+    "login_success": "Logged in successfully",
     "login_failed": "Login Failed"
   },
   "createAccount": {
@@ -149,5 +150,6 @@
     "text": "We keep pace with the latest developments in the IT industry and are always exploring new ways to improve our services."
   },
   "team": "Our Team",
-  "teamDesc": "We believe in our teams as they represent our core strength, with self-motivated and highly skilled employees to achieve the best results in a healthy work environment."
+  "teamDesc": "We believe in our teams as they represent our core strength, with self-motivated and highly skilled employees to achieve the best results in a healthy work environment.",
+  "language": "language"
 }
