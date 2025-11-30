@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { step3Schema, type Step3FormData } from "../schema";
 import { createSeller } from "../sellerApi";
@@ -23,6 +23,7 @@ export default function Confirm() {
   const navigate = useNavigate();
   const { formData, resetFormData } = useSellerRegistration();
   const { data: marketTypes } = useGetMarketTypes();
+  const queryClient = useQueryClient();
   const { data: productsTypes } = useGetProductsTypes();
 
   const {
@@ -45,8 +46,9 @@ export default function Confirm() {
     onSuccess: (data) => {
       toast.success(t("account_created_successfully"));
       resetFormData();
+      queryClient.invalidateQueries({ queryKey: ["sellers"] });
       navigate("/create-seller-success", {
-        state: { storeNumber: data.data?.store_number || "STU0000" },
+        state: { idName: data.data?.id_name || "STU0000" },
       });
     },
     onError: (error: any) => {

@@ -5,7 +5,7 @@ export default function Success() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const storeNumber = location.state?.storeNumber || "STU0000";
+  const storeNumber = location.state?.idName || "STU0000";
 
   return (
     <>

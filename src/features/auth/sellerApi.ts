@@ -6,7 +6,8 @@ export interface CreateSellerResponse {
   message: string;
   data?: {
     seller_id: string;
-    store_number: string;
+    store_number?: string;
+    id_name?: string;
   };
 }
 
