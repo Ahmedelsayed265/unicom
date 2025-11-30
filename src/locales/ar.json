@@ -15,7 +15,16 @@
   "enter_phone_number": "أدخل رقم الهاتف",
   "enter_password": "أدخل كلمة المرور",
   "create_account": "إنشاء حساب",
+  "name": "الاسم",
+  "email": "البريد الإلكتروني",
+  "enter_your_name": "ادخل اسمك",
+  "enter_your_email": "ادخل بريدك الإلكتروني",
+  "toast": {
+    "login_failed": "فشل تسجيل الدخول"
+  },
   "errors": {
+    "nameRequired": "الاسم مطلوب",
+    "invalidEmail": "البريد الإلكتروني غير صالح",
     "mobileFormat": "يجب أن يتكون من 7 أرقام",
     "passwordMinLogin": "يجب ألا تقل كلمة المرور عن 6 أحرف"
   }

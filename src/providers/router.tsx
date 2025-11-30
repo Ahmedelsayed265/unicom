@@ -10,6 +10,7 @@ import CreateAccount from "@/routes/CreateAccount";
 import Success from "@/features/auth/register/Success";
 import Confirm from "@/features/auth/register/Confirm";
 import Documents from "@/features/auth/register/Documents";
+import EmployRegister from "@/components/register/EmployRegister";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "register",
-        element: <Confirm />,
+        element: <EmployRegister />,
       },
       {
         path: "about",
