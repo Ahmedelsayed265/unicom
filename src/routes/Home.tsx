@@ -1,4 +1,5 @@
 import MarketCard from "@/features/markets/MarketCard";
+import { Link } from "react-router";
 
 export default function Home() {
   return (
@@ -10,9 +11,9 @@ export default function Home() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="bg-[#126C9E] py-2 px-4 rounded-[12px]">
+          <Link to="/create-seller-1" className="bg-[#126C9E] py-2 px-4 rounded-[12px]">
             <img src="/images/ic_round-plus.svg" alt="" />
-          </button>
+          </Link>
         </div>
       </div>
 
