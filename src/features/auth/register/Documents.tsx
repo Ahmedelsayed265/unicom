@@ -38,15 +38,15 @@ export default function Documents() {
   return (
     <div className="flex items-center justify-center py-20 auth_page min-h-[665px]">
       <title>{t("create_account")}</title>
-      <div className="absolute top-[15%] right-10 flex items-start gap-3">
+      <div className="absolute top-[15%] start-10 flex items-start gap-3">
         <div className="w-[8px] h-[55px] bg-white rounded-sm"></div>
 
         <div>
           <h1 className="text-[#126C9E] font-bold text-[20px] leading-tight">
-            انشاء حسابك
+            {t("createAccount.title")}
           </h1>
           <p className="text-[#666874] text-[15px] mt-1">
-            تتبع بيانات الأسواق واضف أسواق جديدة بسهولة
+            {t("createAccount.subtitle")}{" "}
           </p>
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function Documents() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex gap-2 flex-col">
-              هل يوجد سجل تجاري؟
+              {t("has_commercial_record")}
               <Controller
                 name="has_commercial_record"
                 control={control}
@@ -69,7 +69,7 @@ export default function Documents() {
                           : "bg-gray-200 text-gray-700 border-gray-300"
                       }`}
                     >
-                      نعم
+                      {t("yes")}
                     </button>
 
                     <button
@@ -81,7 +81,7 @@ export default function Documents() {
                           : "bg-gray-200 text-gray-700 border-gray-300"
                       }`}
                     >
-                      لا
+                      {t("no")}
                     </button>
                   </div>
                 )}
@@ -89,7 +89,7 @@ export default function Documents() {
             </div>
             {watch("has_commercial_record") === "yes" && (
               <div className="flex flex-col gap-2">
-                <label>إرفاق السجل التجاري</label>
+                <label>{t("upload_commercial_record")} </label>
                 <Controller
                   name="commercial_record"
                   control={control}
@@ -106,7 +106,7 @@ export default function Documents() {
                       >
                         {commercialRecordImage
                           ? commercialRecordImage.name
-                          : "ارفق صورة"}
+                          : t("upload_images")}
                       </button>
 
                       <input
@@ -127,7 +127,7 @@ export default function Documents() {
                 />
                 {errors.commercial_record && (
                   <p className="text-red-500 text-sm">
-                    {errors.commercial_record.message}
+                   {t(errors.commercial_record.message as string)}
                   </p>
                 )}
               </div>
@@ -141,7 +141,7 @@ export default function Documents() {
                       name="freelance_id"
                       control={control}
                       render={({ field }) => (
-                        <InputField {...field} label="رقم الرخصة الحرة" />
+                        <InputField {...field} label={t("freelance_id")} />
                       )}
                     />
 
@@ -149,14 +149,17 @@ export default function Documents() {
                       name="freelance_national_id"
                       control={control}
                       render={({ field }) => (
-                        <InputField {...field} label="رقم الهوية" />
+                        <InputField
+                          {...field}
+                          label={t("freelance_national_id")}
+                        />
                       )}
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-2 col-span-2">
-                  <label>إرفاق صورة</label>
+                  <label>{t("upload_image")}</label>
                   <Controller
                     name="freelance_image"
                     control={control}
@@ -171,7 +174,7 @@ export default function Documents() {
                               ?.click()
                           }
                         >
-                          {freelanceImage ? freelanceImage.name : "ارفق صور"}
+                          {freelanceImage ? freelanceImage.name : t("upload_images")}
                         </button>
 
                         <input
@@ -192,7 +195,7 @@ export default function Documents() {
                   />
                   {errors.freelance_image && (
                     <p className="text-red-500 text-sm">
-                      {errors.freelance_image.message}
+                      {t(errors.freelance_image.message as string)}
                     </p>
                   )}
                 </div>
@@ -204,7 +207,7 @@ export default function Documents() {
             type="submit"
             className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition"
           >
-            التالي
+            {t("next")}
           </button>
         </form>
       </div>

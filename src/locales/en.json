@@ -21,6 +21,49 @@
   "subtitle": "Track market data and easily add new markets",
   "enter_your_name": "Enter your name",
   "enter_your_email": "Enter your email",
+  "has_commercial_record": "Do you have a commercial record?",
+  "yes": "Yes",
+  "no": "No",
+  "upload_commercial_record": "Upload commercial record",
+  "upload_image": "Upload image",
+  "upload_images": "Upload images",
+  "freelance_id": "Freelance license number",
+  "freelance_national_id": "National ID",
+  "next": "Next",
+
+  "seller_name": "Seller Name",
+  "seller_name_placeholder": "Mohammed Ibrahim",
+
+  "gender": "Gender",
+  "male": "Male",
+  "female": "Female",
+
+  "market_type": "Market Type",
+  "select_market_type": "Select market type",
+
+  "product_type": "Product Type",
+  "select_product_type": "Select product type",
+
+  "store_area": "Approximate Store Area",
+  "store_area_placeholder": "100 square meters",
+
+  "creating_account": "Creating account...",
+  "create_account_button": "Create Account",
+
+  "account_created_successfully": "Account created successfully!",
+  "error_occurred": "An error occurred",
+  "complete_all_steps": "Please complete all steps",
+
+  "account_created": "Your account has been created successfully!",
+  "thanks_for_joining": "Thank you for joining us",
+  "your_store_number": "This is your store number",
+  "start_now": "Start Now",
+  "accountType": {
+    "employee": "Employee",
+    "registerEmployee": "Register as Employee",
+    "marketOwner": "Market Owner",
+    "registerMarketOwner": "Register as Market Owner"
+  },
   "toast": {
     "login_failed": "Login Failed"
   },
@@ -66,7 +109,19 @@
     "nameRequired": "Name is required",
     "invalidEmail": "Invalid email",
     "mobileFormat": "Must consist of 7 digits",
-    "passwordMinLogin": "Password must be at least 6 characters"
+    "passwordMinLogin": "Password must be at least 6 characters",
+
+    "selectMarket": "Please select a market",
+    "selectArea": "Please select an area",
+
+    "fileSize": "File size must be less than 5MB",
+
+    "nameMin": "Name must be at least 2 characters",
+    "selectMarketType": "Please select the store type",
+    "selectProductType": "Please select the product type",
+    "storeAreaRequired": "Please enter the approximate store area",
+    "commercialRecordRequired": "Commercial record is required",
+    "freelanceImageRequired": "Freelance image is required"
   },
   "from": "From",
   "us": "Us",

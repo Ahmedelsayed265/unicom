@@ -9,39 +9,31 @@ export default function Success() {
 
   return (
     <>
-      {/* <div className="flex p-6">
-        <div className="w-[8px] h-[55px] bg-white rounded-sm"></div>
-
-        <div className=" px-2">
-          <h1 className="text-[#126C9E] font-bold">انشاء حسابك</h1>
-          <p>تتبع بيانات الأسواق واضف أسواق جديدة بسهولة</p>
-        </div>
-      </div> */}
       <div className="flex items-center justify-center py-20 auth_page min-h-[665px]">
         <title>{t("create_account")}</title>
-        <div className="absolute top-[15%] right-10 flex items-start gap-3">
+        <div className="absolute top-[15%] start-10 flex items-start gap-3">
           <div className="w-[8px] h-[55px] bg-white rounded-sm"></div>
 
           <div>
             <h1 className="text-[#126C9E] font-bold text-[20px] leading-tight">
-              انشاء حسابك
+              {t("create_account")}
             </h1>
             <p className="text-[#666874] text-[15px] mt-1">
-              تتبع بيانات الأسواق واضف أسواق جديدة بسهولة
+              {t("subtitle")}
             </p>
           </div>
         </div>
         <div className="bg-white w-[min(600px,100%-16px)] py-8 px-14 custom_round">
           <div className="flex items-center justify-center gap-6 flex-col">
             <h1 className="text-[#126C9E] text-2xl font-bold ">
-              تم إنشاء حسابك بنجاح! 🎉
+              {t("account_created")}
             </h1>
-            <p className="text-[#666] text-lg">شكرًا لانضمامك إلينا</p>
+            <p className="text-[#666] text-lg">{t("thanks_for_joining")}</p>
           </div>
 
           <div className="m-10 text-center">
             <p className="text-[#444] mb-4 font-bold">
-              هذا هو رقم المتجر الخاص بك
+              {t("your_store_number")}
             </p>
 
             <div className="relative max-w-xs mx-auto">
@@ -58,7 +50,7 @@ export default function Success() {
             className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition"
             onClick={() => navigate("/")}
           >
-            ابدا الان
+            {t("start_now")}
           </button>
         </div>
       </div>
