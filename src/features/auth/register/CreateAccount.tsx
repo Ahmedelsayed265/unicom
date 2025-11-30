@@ -99,7 +99,7 @@ export default function CreateAccount() {
 
               {errors.area && (
                 <p className="text-red-500 text-sm mt-1">
-                  {errors.area.message}
+                  {t(errors.area.message as string)}
                 </p>
               )}
             </div>
@@ -137,7 +137,7 @@ export default function CreateAccount() {
 
               {errors.market_id && (
                 <p className="text-red-500 text-sm mt-1">
-                  {errors.market_id.message}
+                 {t(errors.market_id.message as string)}
                 </p>
               )}
             </div>

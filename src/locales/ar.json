@@ -60,6 +60,12 @@
   "toast": {
     "login_failed": "فشل تسجيل الدخول"
   },
+  "accountType": {
+    "employee": "موظف",
+    "registerEmployee": "التسجيل كـ موظف",
+    "marketOwner": "صاحب سوق",
+    "registerMarketOwner": "التسجيل كـ صاحب سوق"
+  },
   "createAccount": {
     "title": "إنشاء حسابك",
     "subtitle": "تتبع بيانات الأسواق واضف أسواق جديدة بسهولة",

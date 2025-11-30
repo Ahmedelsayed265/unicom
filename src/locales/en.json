@@ -58,6 +58,12 @@
   "thanks_for_joining": "Thank you for joining us",
   "your_store_number": "This is your store number",
   "start_now": "Start Now",
+  "accountType": {
+    "employee": "Employee",
+    "registerEmployee": "Register as Employee",
+    "marketOwner": "Market Owner",
+    "registerMarketOwner": "Register as Market Owner"
+  },
   "toast": {
     "login_failed": "Login Failed"
   },
