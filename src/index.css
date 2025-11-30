@@ -78,6 +78,9 @@
   .custom_round {
     border-radius: 25px 25px 25px 90px;
   }
+  .custom_round_about {
+    border-radius: 0px 0px 90px 90px;
+  }
 
   .auth_page {
     background-image: url("/images/auth.png");
