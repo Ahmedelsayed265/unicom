@@ -5,7 +5,7 @@ export default function Terms() {
 
   return (
     <div
-      className="container mx-auto px-4 py-8 prose prose-gray max-w-3xl"
+      className="container mx-auto px-4 py-8 prose prose-gray max-w-6xl"
       dangerouslySetInnerHTML={{ __html: data?.data.terms ?? "" }}
     />
   );

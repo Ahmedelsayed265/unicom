@@ -75,6 +75,14 @@
     "selectMarket": "اختر السوق",
     "next": "التالي"
   },
+  "chooseAccount": {
+    "title": "إنشاء حسابك",
+    "subtitle": "تتبع بيانات الأسواق واضف أسواق جديدة بسهولة",
+    "employee": "موظف",
+    "employeeRegister": "التسجيل ك موظف",
+    "seller": "صاحب سوق",
+    "sellerRegister": "التسجيل ك صاحب سوق"
+  },
   "marketCard": {
     "marketName": "اسم السوق",
     "storeName": "اسم المخزن",
