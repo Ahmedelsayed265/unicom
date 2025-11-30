@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import type { SellerRegistrationData } from "../schema";
 
 interface SellerRegistrationContextType {
-  formData: Partial<SellerRegistrationData>;
-  updateFormData: (data: Partial<SellerRegistrationData>) => void;
+  formData: Partial<SellerRegistrationData & { seller_id?: string; area_store?: string }>;
+  updateFormData: (data: Partial<SellerRegistrationData & { seller_id?: string; area_store?: string }>) => void;
   resetFormData: () => void;
 }
 
@@ -17,9 +17,9 @@ export function SellerRegistrationProvider({
 }: {
   children: ReactNode;
 }) {
-  const [formData, setFormData] = useState<Partial<SellerRegistrationData>>({});
+  const [formData, setFormData] = useState<Partial<SellerRegistrationData & { seller_id?: string; area_store?: string }>>({});
 
-  const updateFormData = (data: Partial<SellerRegistrationData>) => {
+  const updateFormData = (data: Partial<SellerRegistrationData & { seller_id?: string; area_store?: string }>) => {
     setFormData((prev) => ({ ...prev, ...data }));
   };
 

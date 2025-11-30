@@ -18,10 +18,10 @@ import useGetMarkets from "@/hooks/useGetMarkets";
 export default function CreateAccount() {
   const { t } = useTranslation();
   const { data: cities } = useGetCities();
-  const [selectedCity, setSelectedCity] = useState<string>("");
-  const { data: markets } = useGetMarkets(selectedCity);
   const navigate = useNavigate();
-  const { updateFormData } = useSellerRegistration();
+  const { formData, updateFormData } = useSellerRegistration();
+  const [selectedCity, setSelectedCity] = useState<string>(formData.area ?? "");
+  const { data: markets } = useGetMarkets(selectedCity);
 
   const {
     control,
@@ -30,8 +30,8 @@ export default function CreateAccount() {
   } = useForm<Step1FormData>({
     resolver: zodResolver(step1Schema),
     defaultValues: {
-      area: "",
-      market_id: "",
+      area: formData.area ?? "",
+      market_id: formData.market_id ?? "",
     },
   });
 

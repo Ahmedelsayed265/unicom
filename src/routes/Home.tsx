@@ -2,13 +2,11 @@ import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import MarketCard from "@/features/markets/MarketCard";
 import useGetSellers from "@/features/markets/useGetSellers";
-import useAuth from "@/lib/useAuth";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
-  const { isAuthed } = useAuth();
   const { t } = useTranslation();
-  const { data, isLoading } = useGetSellers(isAuthed);
+  const { data, isLoading } = useGetSellers();
 
   return (
     <div className="py-6 md:px-20 px-3 flex flex-col gap-6">

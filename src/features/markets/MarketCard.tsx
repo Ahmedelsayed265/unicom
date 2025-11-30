@@ -2,10 +2,14 @@ import DeleteModal from "@/components/DeleteModal";
 import type { Seller } from "./useGetSellers";
 import { useTranslation } from "react-i18next";
 import useDeleteSeller from "@/hooks/useDeleteSeller";
+import { useNavigate } from "react-router";
+import { useSellerRegistration } from "@/features/auth/register/SellerRegistrationContextType";
 
 export default function MarketCard({ market }: { market: Seller }) {
   const { t } = useTranslation();
   const { deleteSellerAction, isPending } = useDeleteSeller();
+  const navigate = useNavigate();
+  const { updateFormData } = useSellerRegistration();
 
   return (
     <div className="bg-white p-6 rounded-[16px] flex flex-col">
@@ -119,7 +123,25 @@ export default function MarketCard({ market }: { market: Seller }) {
           {t("marketCard.details")}
         </button> */}
 
-        <button className="py-2 px-5 bg-[#000000] rounded-[8px] flex items-center gap-2 text-white">
+        <button
+          className="py-2 px-5 bg-[#000000] rounded-[8px] flex items-center gap-2 text-white"
+          onClick={() => {
+            updateFormData({
+              seller_id: String(market.id),
+              market_id: String(market.market.id),
+              area: String(market.market.city.id),
+              has_commercial_record: market.commercial_image ? "yes" : "no",
+              freelance_id: market.freelance_id ?? "",
+              freelance_national_id: market.freelance_national_id ?? "",
+              name: market.name,
+              gender: market.gender === "female" ? "female" : "male",
+              market_type_id: String(market.market_type.id),
+              product_type_id: String(market.product_type.id),
+              area_store: String(market.area),
+            });
+            navigate("/create-seller-1");
+          }}
+        >
           <img src="/images/tabler_edit.svg" className="w-[20px]" alt="" />
           {t("marketCard.edit")}
         </button>

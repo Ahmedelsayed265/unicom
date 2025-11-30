@@ -9,7 +9,7 @@ import InputField from "@/components/InputField";
 export default function Documents() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { updateFormData } = useSellerRegistration();
+  const { formData, updateFormData } = useSellerRegistration();
 
   const {
     control,
@@ -19,9 +19,9 @@ export default function Documents() {
   } = useForm<Step2FormData>({
     resolver: zodResolver(step2Schema),
     defaultValues: {
-      has_commercial_record: "yes",
-      freelance_id: "",
-      freelance_national_id: "",
+      has_commercial_record: formData.has_commercial_record ?? "yes",
+      freelance_id: formData.freelance_id ?? "",
+      freelance_national_id: formData.freelance_national_id ?? "",
     },
   });
 

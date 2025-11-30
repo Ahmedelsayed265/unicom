@@ -2,10 +2,10 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { step3Schema, type Step3FormData } from "../schema";
-import { createSeller } from "../sellerApi";
+import { createSeller, updateSeller } from "../sellerApi";
 import { useSellerRegistration } from "./SellerRegistrationContextType";
 import {
   Select,
@@ -34,23 +34,37 @@ export default function Confirm() {
   } = useForm<Step3FormData>({
     resolver: zodResolver(step3Schema),
     defaultValues: {
-      name: "",
-      gender: "male",
-      market_type_id: "",
-      product_type_id: "",
-      area: "",
+      name: (formData as any).name ?? "",
+      gender: (formData as any).gender ?? "male",
+      market_type_id: (formData as any).market_type_id ?? "",
+      product_type_id: (formData as any).product_type_id ?? "",
+      area: (formData as any).area_store ?? "",
     },
   });
 
   const createSellerMutation = useMutation({
-    mutationFn: createSeller,
+    mutationFn: async (payload: any) => {
+      if ((formData as any).seller_id) {
+        return updateSeller({
+          ...(payload as any),
+          seller_id: (formData as any).seller_id,
+        });
+      }
+      return createSeller(payload as any);
+    },
     onSuccess: (data) => {
+      if ((formData as any).seller_id) {
+        toast.success(t("toast.seller_updated_successfully"));
+        resetFormData();
+        navigate("/");
+        return;
+      }
       toast.success(t("account_created_successfully"));
       resetFormData();
-      refetch();
       navigate("/create-seller-success", {
         state: { idName: data.data?.id_name || "STU0000" },
       });
+      refetch();
     },
     onError: (error: any) => {
       toast.error(error?.response?.data?.message || t("error_occurred"));

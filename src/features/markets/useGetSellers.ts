@@ -61,12 +61,11 @@ export interface City {
   name: string;
 }
 
-export default function useGetSellers(enabled: boolean) {
+export default function useGetSellers() {
   const { isLoading, data, error, refetch } = useQuery({
     queryKey: ["sellers"],
     queryFn: (): Promise<SellerResponse> =>
       getRequest<SellerResponse>("user/get_sellers"),
-    enabled,
   });
 
   return { isLoading, data, error, refetch };

@@ -61,7 +61,8 @@
   "toast": {
     "login_success": "تم تسجيل الدخول بنجاح",
     "login_failed": "فشل تسجيل الدخول",
-    "delete_success": "تم حذف السوق بنجاح"
+    "delete_success": "تم حذف السوق بنجاح",
+    "seller_updated_successfully": "تم تحديث بيانات البائع بنجاح"
   },
   "accountType": {
     "employee": "موظف",

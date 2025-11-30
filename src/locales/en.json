@@ -68,7 +68,8 @@
   "toast": {
     "login_success": "Logged in successfully",
     "login_failed": "Login Failed",
-    "delete_success": "seller deleted successfully"
+    "delete_success": "seller deleted successfully",
+    "seller_updated_successfully": "Seller updated successfully"
   },
   "createAccount": {
     "title": "Create Your Account",
