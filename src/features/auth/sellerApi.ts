@@ -1,7 +1,6 @@
 import { axiosApi } from "@/lib/axiosApi";
 import type { SellerRegistrationData } from "./schema";
 
-
 export interface CreateSellerResponse {
   success: boolean;
   message: string;
@@ -35,9 +34,6 @@ export async function createSeller(
   // Add file uploads
   if (data.freelance_image) {
     formData.append("freelance_image", data.freelance_image);
-  }
-  if (data.commercial_record) {
-    formData.append("commercial_record", data.commercial_record);
   }
 
   const response = await axiosApi.post<CreateSellerResponse>(

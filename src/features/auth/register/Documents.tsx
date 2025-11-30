@@ -2,10 +2,9 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import InputField from "@/components/InputField";
 import { useSellerRegistration } from "../SellerRegistrationContextType";
 import { step2Schema, type Step2FormData } from "../schema";
-
+import InputField from "@/components/InputField";
 
 export default function Documents() {
   const { t } = useTranslation();
@@ -21,17 +20,17 @@ export default function Documents() {
     resolver: zodResolver(step2Schema),
     defaultValues: {
       has_commercial_record: "yes",
-      has_freelance_license: "no",
       freelance_id: "",
       freelance_national_id: "",
     },
   });
 
-
   const commercialRecordImage = watch("commercial_record");
   const freelanceImage = watch("freelance_image");
 
   const onSubmit = (data: Step2FormData) => {
+    console.log(errors);
+    
     updateFormData(data);
     navigate("/create-seller-3");
   };
@@ -43,7 +42,7 @@ export default function Documents() {
       <div className="bg-white w-[min(600px,100%-16px)] py-8 px-14 custom_round">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-4">
-            <div className="flex gap-3 flex-col">
+            <div className="flex gap-2 flex-col">
               هل يوجد سجل تجاري؟
               <Controller
                 name="has_commercial_record"
@@ -53,7 +52,7 @@ export default function Documents() {
                     <button
                       type="button"
                       onClick={() => field.onChange("yes")}
-                      className={`w-24 rounded-md py-2 ${
+                      className={`w-24 rounded-md py-2 flex-1 h-[48px] ${
                         field.value === "yes"
                           ? "bg-[#126C9E] text-white border-[#126C9E]"
                           : "bg-gray-200 text-gray-700 border-gray-300"
@@ -61,10 +60,11 @@ export default function Documents() {
                     >
                       نعم
                     </button>
+
                     <button
                       type="button"
                       onClick={() => field.onChange("no")}
-                      className={`w-24 rounded-md px-4 py-2 ${
+                      className={`w-24 rounded-md px-4 py-2 flex-1 h-[48px] ${
                         field.value === "no"
                           ? "bg-[#126C9E] text-white border-[#126C9E]"
                           : "bg-gray-200 text-gray-700 border-gray-300"
@@ -76,141 +76,117 @@ export default function Documents() {
                 )}
               />
             </div>
-
-            <div className="flex flex-col gap-2">
-              <label>إرفاق السجل التجاري</label>
-              <Controller
-                name="commercial_record"
-                control={control}
-                render={({ field: { onChange, value, ...field } }) => (
-                  <>
-                    <button
-                      type="button"
-                      className="bg-[#fafafa] border text-[14px] border-[#f4f4f4] rounded-[8px] px-3 py-1 h-[48px]"
-                      onClick={() =>
-                        document
-                          .getElementById("commercialRecordInput")
-                          ?.click()
-                      }
-                    >
-                      {commercialRecordImage
-                        ? commercialRecordImage.name
-                        : "ارفق صورة"}
-                    </button>
-                    <input
-                      {...field}
-                      type="file"
-                      id="commercialRecordInput"
-                      accept="image/*"
-                      className="hidden"
-                      onChange={(e) => {
-                        const file = e.target.files?.[0];
-                        if (file) {
-                          onChange(file);
+            {watch("has_commercial_record") === "yes" && (
+              <div className="flex flex-col gap-2">
+                <label>إرفاق السجل التجاري</label>
+                <Controller
+                  name="commercial_record"
+                  control={control}
+                  render={({ field: { onChange, value, ...field } }) => (
+                    <>
+                      <button
+                        type="button"
+                        className="bg-[#fafafa] border text-[14px] border-[#f4f4f4] rounded-[8px] px-3 py-1 h-[48px]"
+                        onClick={() =>
+                          document
+                            .getElementById("commercialRecordInput")
+                            ?.click()
                         }
-                      }}
-                    />
-                  </>
-                )}
-              />
-              {errors.commercial_record && (
-                <p className="text-red-500 text-sm">
-                  {errors.commercial_record.message}
-                </p>
-              )}
-            </div>
+                      >
+                        {commercialRecordImage
+                          ? commercialRecordImage.name
+                          : "ارفق صورة"}
+                      </button>
 
-            <div className="flex gap-3 flex-col">
-              هل يوجد رخصة حرة؟
-              <Controller
-                name="has_freelance_license"
-                control={control}
-                render={({ field }) => (
-                  <div className="flex gap-4">
-                    <button
-                      type="button"
-                      onClick={() => field.onChange("yes")}
-                      className={`w-24 rounded-md py-2 ${
-                        field.value === "yes"
-                          ? "bg-[#126C9E] text-white border-[#126C9E]"
-                          : "bg-gray-200 text-gray-700 border-gray-300"
-                      }`}
-                    >
-                      نعم
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => field.onChange("no")}
-                      className={`w-24 rounded-md px-4 py-2 ${
-                        field.value === "no"
-                          ? "bg-[#126C9E] text-white border-[#126C9E]"
-                          : "bg-gray-200 text-gray-700 border-gray-300"
-                      }`}
-                    >
-                      لا
-                    </button>
-                  </div>
-                )}
-              />
-            </div>
-
-            <div className="col-span-2">
-              <div className="grid grid-cols-2 gap-4">
-                <Controller
-                  name="freelance_id"
-                  control={control}
-                  render={({ field }) => (
-                    <InputField {...field} label="رقم الرخصة الحرة" />
+                      <input
+                        {...field}
+                        type="file"
+                        id="commercialRecordInput"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) {
+                            onChange(file);
+                          }
+                        }}
+                      />
+                    </>
                   )}
                 />
-                <Controller
-                  name="freelance_national_id"
-                  control={control}
-                  render={({ field }) => (
-                    <InputField {...field} label="رقم الهوية" />
-                  )}
-                />
+                {errors.commercial_record && (
+                  <p className="text-red-500 text-sm">
+                    {errors.commercial_record.message}
+                  </p>
+                )}
               </div>
-            </div>
+            )}
 
-            <div className="flex flex-col gap-2">
-              <label>إرفاق صورة</label>
-              <Controller
-                name="freelance_image"
-                control={control}
-                render={({ field: { onChange, value, ...field } }) => (
-                  <>
-                    <button
-                      type="button"
-                      className="bg-[#fafafa] border text-[14px] border-[#f4f4f4] rounded-[8px] px-3 py-1 h-[48px]"
-                      onClick={() =>
-                        document.getElementById("freelanceImageInput")?.click()
-                      }
-                    >
-                      {freelanceImage ? freelanceImage.name : "ارفق صور"}
-                    </button>
-                    <input
-                      {...field}
-                      type="file"
-                      id="freelanceImageInput"
-                      accept="image/*"
-                      className="hidden"
-                      onChange={(e) => {
-                        const file = e.target.files?.[0];
-                        if (file) {
-                          onChange(file);
-                        }
-                      }}
+            {watch("has_commercial_record") === "no" && (
+              <>
+                <div className="col-span-2">
+                  <div className="grid grid-cols-2 gap-4">
+                    <Controller
+                      name="freelance_id"
+                      control={control}
+                      render={({ field }) => (
+                        <InputField {...field} label="رقم الرخصة الحرة" />
+                      )}
                     />
-                  </>
-                )}
-              />
-              {errors.freelance_image && (
-                <p className="text-red-500 text-sm">
-                  {errors.freelance_image.message}
-                </p>
-              )}
-            </div>
+
+                    <Controller
+                      name="freelance_national_id"
+                      control={control}
+                      render={({ field }) => (
+                        <InputField {...field} label="رقم الهوية" />
+                      )}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2 col-span-2">
+                  <label>إرفاق صورة</label>
+                  <Controller
+                    name="freelance_image"
+                    control={control}
+                    render={({ field: { onChange, value, ...field } }) => (
+                      <>
+                        <button
+                          type="button"
+                          className="bg-[#fafafa] border text-[14px] border-[#f4f4f4] rounded-[8px] px-3 py-1 h-[48px]"
+                          onClick={() =>
+                            document
+                              .getElementById("freelanceImageInput")
+                              ?.click()
+                          }
+                        >
+                          {freelanceImage ? freelanceImage.name : "ارفق صور"}
+                        </button>
+
+                        <input
+                          {...field}
+                          type="file"
+                          id="freelanceImageInput"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) {
+                              onChange(file);
+                            }
+                          }}
+                        />
+                      </>
+                    )}
+                  />
+                  {errors.freelance_image && (
+                    <p className="text-red-500 text-sm">
+                      {errors.freelance_image.message}
+                    </p>
+                  )}
+                </div>
+              </>
+            )}
           </div>
 
           <button

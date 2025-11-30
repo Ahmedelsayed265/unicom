@@ -23,7 +23,6 @@ export const step2Schema = z.object({
       (file) => !file || file.size <= 5000000,
       "حجم الملف يجب أن يكون أقل من 5MB"
     ),
-  has_freelance_license: z.enum(["yes", "no"]),
   freelance_id: z.string().optional(),
   freelance_national_id: z.string().optional(),
   freelance_image: z
