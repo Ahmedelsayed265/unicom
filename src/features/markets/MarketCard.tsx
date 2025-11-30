@@ -5,7 +5,8 @@ import useDeleteSeller from "@/hooks/useDeleteSeller";
 
 export default function MarketCard({ market }: { market: Seller }) {
   const { t } = useTranslation();
-  const { deleteSellerAction } = useDeleteSeller();
+  const { deleteSellerAction, isPending } = useDeleteSeller();
+
   return (
     <div className="bg-white p-6 rounded-[16px] flex flex-col">
       <div className="flex items-center flex-wrap justify-between border-b border-[#f4f4f4] py-3 gap-2">
@@ -126,12 +127,19 @@ export default function MarketCard({ market }: { market: Seller }) {
         <DeleteModal
           onConfirm={() => deleteSellerAction(market.id)}
           triggerElement={
-            <button className="py-2 px-5 bg-[#9E3012] rounded-[8px] flex items-center gap-2 text-white">
-              <img
-                src="/images/material-symbols_delete.svg"
-                className="w-[20px]"
-                alt=""
-              />
+            <button
+              className="py-2 px-5 bg-[#9E3012] rounded-[8px] flex items-center gap-2 text-white"
+              disabled={isPending}
+            >
+              {isPending ? (
+                <div className="w-[20px] h-[20px] border-2 border-white border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <img
+                  src="/images/material-symbols_delete.svg"
+                  className="w-[20px]"
+                  alt=""
+                />
+              )}
               {t("marketCard.delete")}
             </button>
           }

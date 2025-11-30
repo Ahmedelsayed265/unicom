@@ -59,7 +59,8 @@
   "start_now": "ابدأ الآن",
   "toast": {
     "login_success": "تم تسجيل الدخول بنجاح",
-    "login_failed": "فشل تسجيل الدخول"
+    "login_failed": "فشل تسجيل الدخول",
+    "delete_success": "تم حذف السوق بنجاح"
   },
   "accountType": {
     "employee": "موظف",
