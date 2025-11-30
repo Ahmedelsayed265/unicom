@@ -50,10 +50,6 @@ export default function Login() {
             {...register("password")}
           />
 
-          {/* <Link to="/forget-password" className="text-end">
-            {t("forget")}
-          </Link> */}
-
           <SubmitBtn text={t("login")} loading={isPending} />
 
           <Link

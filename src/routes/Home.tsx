@@ -1,18 +1,23 @@
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 import MarketCard from "@/features/markets/MarketCard";
 import useGetSellers from "@/features/markets/useGetSellers";
 import useAuth from "@/lib/useAuth";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
   const { isAuthed } = useAuth();
-  const { data } = useGetSellers(isAuthed);
+  const { t } = useTranslation();
+  const { data, isLoading } = useGetSellers(isAuthed);
 
   return (
     <div className="py-6 px-20 flex flex-col gap-6">
       <div className="flex items-center justify-between px-4">
         <div>
-          <h4 className="text-[#126C9E] font-bold text-[24px] mb-3">أسواقي</h4>
-          <p>تتبع بيانات الأسواق واضف أسواق جديدة بسهولة</p>
+          <h4 className="text-[#126C9E] font-bold text-[24px] mb-3">
+            {t("title")}
+          </h4>
+          <p>{t("subtitle")}</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -26,9 +31,13 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
-        {data?.data.map((market) => (
-          <MarketCard key={market.id} market={market} />
-        ))}
+        {isLoading
+          ? Array.from({ length: 2 }).map((_, index) => (
+              <Skeleton key={index} className="h-96 rounded-xl bg-white" />
+            ))
+          : data?.data.map((market) => (
+              <MarketCard key={market.id} market={market} />
+            ))}
       </div>
     </div>
   );

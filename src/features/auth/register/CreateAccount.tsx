@@ -43,25 +43,32 @@ export default function CreateAccount() {
   return (
     <div className="auth_page min-h-[665px] flex items-center justify-center py-20 px-4">
       <title>{t("create_account")}</title>
-      <div className="absolute top-[15%] right-10 flex items-start gap-3">
-        <div className="w-[8px] h-[55px] bg-white rounded-sm"></div>
+
+      {/* Title + Description */}
+      <div className="absolute top-[18%] start-20 flex items-start gap-4">
+        <div className="w-[8px] h-[65px] bg-white rounded-sm"></div>
 
         <div>
-          <h1 className="text-[#126C9E] font-bold text-[20px] leading-tight">
-            انشاء حسابك
+          <h1 className="text-[#126C9E] font-bold text-[20px] mb-3 leading-tight">
+            {t("createAccount.title")}
           </h1>
+
           <p className="text-[#666874] text-[15px] mt-1">
-            تتبع بيانات الأسواق واضف أسواق جديدة بسهولة
+            {t("createAccount.subtitle")}
           </p>
         </div>
       </div>
-      <div className="bg-white w-[min(700px,100%-16px)] py-10 px-12 custom_round shadow-md ">
+
+      {/* Form Box */}
+      <div className="bg-white w-[min(700px,100%-16px)] py-10 px-12 custom_round shadow-md">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-6">
+            {/* AREA */}
             <div>
               <label className="block mb-1 text-sm font-semibold text-[#444]">
-                المنطقة
+                {t("createAccount.area")}
               </label>
+
               <Controller
                 name="area"
                 control={control}
@@ -74,8 +81,11 @@ export default function CreateAccount() {
                     }}
                   >
                     <SelectTrigger className="w-full h-[50px] rounded-lg border-[#d6d6d6] bg-[#f9fafb] text-[#444] focus:ring-2 focus:ring-[#232633]">
-                      <SelectValue placeholder="اختر المنطقة" />
+                      <SelectValue
+                        placeholder={t("createAccount.selectArea")}
+                      />
                     </SelectTrigger>
+
                     <SelectContent>
                       {cities?.data?.map((city) => (
                         <SelectItem key={city.id} value={city.id.toString()}>
@@ -86,6 +96,7 @@ export default function CreateAccount() {
                   </Select>
                 )}
               />
+
               {errors.area && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.area.message}
@@ -93,18 +104,23 @@ export default function CreateAccount() {
               )}
             </div>
 
+            {/* MARKET */}
             <div>
               <label className="block mb-1 text-sm font-semibold text-[#444]">
-                السوق
+                {t("createAccount.market")}
               </label>
+
               <Controller
                 name="market_id"
                 control={control}
                 render={({ field }) => (
                   <Select value={field.value} onValueChange={field.onChange}>
                     <SelectTrigger className="w-full h-[50px] rounded-lg border-[#d6d6d6] bg-[#f9fafb] text-[#444] focus:ring-2 focus:ring-[#232633]">
-                      <SelectValue placeholder="اختر السوق" />
+                      <SelectValue
+                        placeholder={t("createAccount.selectMarket")}
+                      />
                     </SelectTrigger>
+
                     <SelectContent>
                       {markets?.data?.map((market) => (
                         <SelectItem
@@ -118,6 +134,7 @@ export default function CreateAccount() {
                   </Select>
                 )}
               />
+
               {errors.market_id && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.market_id.message}
@@ -126,11 +143,12 @@ export default function CreateAccount() {
             </div>
           </div>
 
+          {/* BUTTON */}
           <button
             type="submit"
-            className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white  text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition"
+            className="w-[70%] mx-auto mt-10 bg-[#40465C] flex items-center justify-center text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#2e3140] transition"
           >
-            التالي
+            {t("createAccount.next")}
           </button>
         </form>
       </div>

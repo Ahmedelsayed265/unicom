@@ -1,8 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router";
 import LangMenu from "./LangMenu";
+import useAuth from "@/lib/useAuth";
 
 export default function Header() {
+  const { isAuthed } = useAuth();
   const { t } = useTranslation();
 
   return (
@@ -30,9 +32,12 @@ export default function Header() {
       </div>
 
       <div className="flex-1 flex justify-end gap-4">
-        <Link to="login" className="rounded-md bg-white p-2 px-4">
-          {t("login")}
-        </Link>
+        {!isAuthed && (
+          <Link to="login" className="rounded-md bg-white p-2 px-4">
+            {t("login")}
+          </Link>
+        )}
+
         <LangMenu />
       </div>
     </header>

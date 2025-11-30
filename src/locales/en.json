@@ -1,58 +1,88 @@
 {
   "home": "Home",
   "privacy": "Privacy Policy",
-  "terms": "Terms & Conditions",
-  "about": "About us",
-  "rights": "All rights reserved",
+  "terms": "Terms and Conditions",
+  "about": "About Us",
+  "rights": "All Rights Reserved",
   "companyName": "Unicom",
-  "loginTitle": "Login",
+  "loginTitle": "Sign In",
   "logindesc": "The easiest way to manage your account and orders",
-  "register": "Register",
+  "password": "Password",
+  "forget": "Forgot your password?",
+  "login": "Login",
+  "register": "Create Account",
+  "phone_number": "Phone Number",
+  "enter_phone_number": "Enter phone number",
+  "enter_password": "Enter password",
+  "create_account": "Create Account",
   "name": "Name",
   "email": "Email",
-  "phone_number": "Phone Number",
-  "password": "Password",
+  "title": "My Markets",
+  "subtitle": "Track market data and easily add new markets",
   "enter_your_name": "Enter your name",
   "enter_your_email": "Enter your email",
-  "enter_phone_number": "Enter your phone number",
-  "enter_password": "Enter your password",
   "toast": {
-    "login_failed": "Login failed"
+    "login_failed": "Login Failed"
+  },
+  "createAccount": {
+    "title": "Create Your Account",
+    "subtitle": "Track market data and easily add new markets",
+    "area": "Area",
+    "selectArea": "Select Area",
+    "market": "Market",
+    "selectMarket": "Select Market",
+    "next": "Next"
+  },
+  "marketCard": {
+    "marketName": "Market Name",
+    "storeName": "Store Name",
+    "productName": "Product Name",
+    "nationalId": "National ID",
+    "notAvailable": "Not Available",
+    "marketType": "Market Type",
+    "productsCount": "Products Count",
+    "createdAt": "Created At",
+    "location": "Location",
+    "saudiArabia": "Saudi Arabia",
+    "status": "Status",
+    "details": "Details",
+    "edit": "Edit",
+    "delete": "Delete",
+    "statuses": {
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "rejected": "Rejected"
+    }
   },
   "errors": {
-    "mobileFormat": "Invalid phone number",
-    "passwordMinLogin": "Password must be at least 6 characters",
     "nameRequired": "Name is required",
-    "invalidEmail": "Invalid email address"
+    "invalidEmail": "Invalid email",
+    "mobileFormat": "Must consist of 7 digits",
+    "passwordMinLogin": "Password must be at least 6 characters"
   },
-  "from": "About",
+  "from": "From",
   "us": "Us",
-
-  "title1": "We Raise the Bar of Success",
+  "title1": "We Raise the Bar for Success",
   "title2": "Using Technology...",
-
-  "desc1": "We provide the best solutions in IT and digital economy fields",
-  "desc2": "including cloud computational engineering to meet customers’ needs.",
-
+  "desc1": "We have the best solutions in information technology and digital economy",
+  "desc2": "and cloud computing engineering solutions to meet customer needs.",
   "whyUs": "Why Us?",
-
   "experience": {
     "title": "Experience",
-    "text": "Our team consists of highly skilled professionals with deep understanding of the latest IT technologies."
+    "text": "Our team consists of highly skilled and experienced professionals with a deep understanding of the latest IT technologies."
   },
   "quality": {
     "title": "Quality",
-    "text": "We are committed to providing high-quality services and solutions."
+    "text": "Committed to providing high-quality services and solutions to our clients."
   },
   "trust": {
     "title": "Reliability",
-    "text": "Our clients can depend on us to meet deadlines and deliver projects on time."
+    "text": "Our clients can rely on us to consistently meet deadlines and deliver projects on time."
   },
   "innovation": {
     "title": "Innovation",
-    "text": "We follow the latest developments in IT and constantly explore new ways to improve our services."
+    "text": "We keep pace with the latest developments in the IT industry and are always exploring new ways to improve our services."
   },
-
   "team": "Our Team",
-  "teamDesc": "We believe in our teams as they represent our core strength, working with passion to achieve excellent results in a healthy work environment."
+  "teamDesc": "We believe in our teams as they represent our core strength, with self-motivated and highly skilled employees to achieve the best results in a healthy work environment."
 }

@@ -4,8 +4,20 @@ export const axiosApi = axios.create({
   baseURL: "https://unicom.devalm.com/api/",
   headers: {
     "Content-Type": "application/json",
+    "lang": "ar"
   },
 });
+
+axiosApi.interceptors.request.use(
+  (config) => {
+    const lang = localStorage.getItem("i18nextLng") || "en";
+    config.headers["lang"] = lang;
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 export const getRequest = async <T>(
   url: string,

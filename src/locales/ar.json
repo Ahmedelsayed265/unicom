@@ -19,8 +19,40 @@
   "email": "البريد الإلكتروني",
   "enter_your_name": "ادخل اسمك",
   "enter_your_email": "ادخل بريدك الإلكتروني",
+  "title": "أسواقي",
+  "subtitle": "تتبع بيانات الأسواق واضف أسواق جديدة بسهولة",
   "toast": {
     "login_failed": "فشل تسجيل الدخول"
+  },
+  "createAccount": {
+    "title": "إنشاء حسابك",
+    "subtitle": "تتبع بيانات الأسواق واضف أسواق جديدة بسهولة",
+    "area": "المنطقة",
+    "selectArea": "اختر المنطقة",
+    "market": "السوق",
+    "selectMarket": "اختر السوق",
+    "next": "التالي"
+  },
+  "marketCard": {
+    "marketName": "اسم السوق",
+    "storeName": "اسم المخزن",
+    "productName": "اسم المنتج",
+    "nationalId": "رقم الهوية",
+    "notAvailable": "غير متاح",
+    "marketType": "نوع السوق",
+    "productsCount": "عدد المنتجات",
+    "createdAt": "تاريخ الإنشاء",
+    "location": "الموقع",
+    "saudiArabia": "السعودية",
+    "status": "الحالة",
+    "details": "تفاصيل",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "statuses": {
+      "pending": "قيد الانتظار",
+      "accepted": "مقبول",
+      "rejected": "مرفوض"
+    }
   },
   "errors": {
     "nameRequired": "الاسم مطلوب",
