@@ -9,9 +9,9 @@ export default function useGetMarkets(city_id: string) {
   }
 
   const { isLoading, data, error } = useQuery({
-    queryKey: ["markets"],
+    queryKey: ["markets", city_id],
     queryFn: (): Promise<MarketsResponse> =>
-      postRequest<MarketsResponse>("/get_cities", {
+      postRequest<MarketsResponse>("/get_markets", {
         city_id: city_id,
       }),
 
