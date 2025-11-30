@@ -7,9 +7,9 @@ import About from "@/routes/About";
 import Terms from "@/routes/Terms";
 import Privacy from "@/routes/Privacy";
 import CreateAccount from "@/routes/CreateAccount";
-import Success from "@/components/register/Success";
-import Confirm from "@/components/register/Confirm";
-import Documents from "@/components/register/Documents";
+import Success from "@/features/auth/register/Success";
+import Confirm from "@/features/auth/register/Confirm";
+import Documents from "@/features/auth/register/Documents";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "create-seller-2",
         element: <Documents />,
+      },
+      {
+        path: "create-seller-3",
+        element: <Confirm />,
       },
       {
         path: "create-seller-success",
